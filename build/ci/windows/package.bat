@@ -52,17 +52,17 @@ IF %BUILD_MODE% == stable_build  ( SET PACKAGE_TYPE="msi") ELSE (
 )))))
 
 SET DO_SIGN=OFF
-IF %PACKAGE_TYPE% == "msi" ( 
-    SET DO_SIGN=ON
-    IF %SIGN_CERTIFICATE_ENCRYPT_SECRET% == "" ( 
-        SET DO_SIGN=OFF
-        ECHO "warning: not set SIGN_CERTIFICATE_ENCRYPT_SECRET"
-    )
-    IF %SIGN_CERTIFICATE_PASSWORD% == "" ( 
-        SET DO_SIGN=OFF
-        ECHO "warning: not set SIGN_CERTIFICATE_PASSWORD"
-    )
-)
+@REM IF %PACKAGE_TYPE% == "msi" ( 
+@REM     SET DO_SIGN=ON
+@REM     IF %SIGN_CERTIFICATE_ENCRYPT_SECRET% == "" ( 
+@REM         SET DO_SIGN=OFF
+@REM         ECHO "warning: not set SIGN_CERTIFICATE_ENCRYPT_SECRET"
+@REM     )
+@REM     IF %SIGN_CERTIFICATE_PASSWORD% == "" ( 
+@REM         SET DO_SIGN=OFF
+@REM         ECHO "warning: not set SIGN_CERTIFICATE_PASSWORD"
+@REM     )
+@REM )
 
 SET /p BUILD_VERSION=<%ARTIFACTS_DIR%\env\build_version.env
 SET /p BUILD_NUMBER=<%ARTIFACTS_DIR%\env\build_number.env
