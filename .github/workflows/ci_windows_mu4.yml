@@ -186,25 +186,25 @@ jobs:
         IF ${{ secrets.WIN_SIGN_CERTIFICATE_PASSWORD != 0 }} == true ( SET S_P=${{ secrets.WIN_SIGN_CERTIFICATE_PASSWORD }} ) ELSE ( SET S_P="''" )
         IF ${{ env.BUILD_MODE }} == stable_build ( SET GUID=${{ secrets.WIN_MSI_STABLE_MU4_GUID }} ) ELSE ( SET GUID=${{ secrets.WIN_MSI_TESTING_MU4_GUID }} )
         build\ci\windows\package.bat --signsecret %S_S% --signpass %S_P% --guid %GUID%
-    - name: Checksum 
-      if: env.DO_BUILD == 'true'
-      run: |
-        bash ./build/ci/tools/checksum.sh
+    # - name: Checksum 
+    #   if: env.DO_BUILD == 'true'
+    #   run: |
+    #     bash ./build/ci/tools/checksum.sh
     - name: Upload dump symbols
       if: env.DO_UPLOAD_SYMBOLS == 'true'
       shell: bash
       run: |
         bash ./build/ci/tools/sentry_syms_upload.sh -t ${{ secrets.SENTRY_AUTH_TOKEN }} -p ${SENTRY_PROJECT}    
-    - name: Publish package
-      if: env.DO_PUBLISH == 'true'
-      shell: bash
-      run: |
-        bash ./build/ci/tools/osuosl/publish.sh -s ${{ secrets.OSUOSL_SSH_ENCRYPT_SECRET }} --os windows -v 4
-    - name: AppCast
-      if: env.DO_BUILD == 'true'
-      shell: bash
-      run: |
-        bash ./build/ci/tools/sparkle_appcast_gen.sh -p windows 
+    # - name: Publish package
+    #   if: env.DO_PUBLISH == 'true'
+    #   shell: bash
+    #   run: |
+    #     bash ./build/ci/tools/osuosl/publish.sh -s ${{ secrets.OSUOSL_SSH_ENCRYPT_SECRET }} --os windows -v 4
+    # - name: AppCast
+    #   if: env.DO_BUILD == 'true'
+    #   shell: bash
+    #   run: |
+    #     bash ./build/ci/tools/sparkle_appcast_gen.sh -p windows 
     - name: Upload artifacts on GitHub
       if: ${{ always() }}
       uses: actions/upload-artifact@v3
@@ -216,10 +216,10 @@ jobs:
   build_portable:
     runs-on: windows-2022
     steps:
-    - name: Cancel Previous Runs
-      uses: styfle/cancel-workflow-action@0.11.0
-      with:
-        access_token: ${{ github.token }}
+    # - name: Cancel Previous Runs
+    #   uses: styfle/cancel-workflow-action@0.11.0
+    #   with:
+    #     access_token: ${{ github.token }}
     - name: Clone repository
       uses: actions/checkout@v3
       with:
@@ -281,15 +281,15 @@ jobs:
       shell: cmd
       run: |      
         build\ci\windows\package.bat --portable ON 
-    - name: Checksum 
-      if: env.DO_BUILD == 'true'
-      run: |
-        bash ./build/ci/tools/checksum.sh     
-    - name: Publish package
-      if: env.DO_PUBLISH == 'true'
-      run: |
-        build\ci\windows\publish.bat --secret ${{ secrets.OSUOSL_SSH_ENCRYPT_SECRET }} 
-      shell: cmd
+    # - name: Checksum 
+    #   if: env.DO_BUILD == 'true'
+    #   run: |
+    #     bash ./build/ci/tools/checksum.sh     
+    # - name: Publish package
+    #   if: env.DO_PUBLISH == 'true'
+    #   run: |
+    #     build\ci\windows\publish.bat --secret ${{ secrets.OSUOSL_SSH_ENCRYPT_SECRET }} 
+    #   shell: cmd
     - name: Upload artifacts on GitHub
       if: env.DO_BUILD == 'true'
       uses: actions/upload-artifact@v3

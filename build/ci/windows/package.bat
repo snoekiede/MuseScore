@@ -191,6 +191,8 @@ IF %DO_SIGN% == ON (
 
 bash ./build/ci/tools/make_artifact_name_env.sh %ARTIFACT_NAME%
 
+GOTO PACK_7z
+
 GOTO END_SUCCESS
 
 :: ============================
