@@ -154,21 +154,13 @@ cmake --build . --target package || GOTO END_ERROR
 cd ..
 
 ECHO "Create logs dir"
-MKDIR %ARTIFACTS_DIR%\logs
-MKDIR %ARTIFACTS_DIR%\logs\WIX
-MKDIR %ARTIFACTS_DIR%\_CPack_Packages
+MKDIR %ARTIFACTS_DIR%\CPack_Packages
 
-SET WIX_LOG_DIR=win64
-IF %TARGET_PROCESSOR_BITS% == 32 ( SET WIX_LOG_DIR=win32 ) 
+SET WIX_LOGS_PATH="%BUILD_DIR%\_CPack_Packages"
+ECHO "Copy from %WIX_LOGS_PATH% to %ARTIFACTS_DIR%\CPack_Packages"
 
-@REM SET WIX_LOGS_PATH="%BUILD_DIR%\_CPack_Packages\%WIX_LOG_DIR%\WIX"
-@REM ECHO "Copy from %WIX_LOGS_PATH% to %ARTIFACTS_DIR%\logs\WIX"
-
-@REM ECHO .msi > excludedmsi.txt
-@REM XCOPY /Y /EXCLUDE:excludedmsi.txt %WIX_LOGS_PATH% %ARTIFACTS_DIR%\logs\WIX
-
-ECHO "Copy from %BUILD_DIR%\_CPack_Packages to %ARTIFACTS_DIR%\_CPack_Packages"
-XCOPY /Y "%BUILD_DIR%\_CPack_Packages" "%ARTIFACTS_DIR%\_CPack_Packages"
+::ECHO .msi > excludedmsi.txt
+XCOPY /Y/E/H/C/I  %WIX_LOGS_PATH% %ARTIFACTS_DIR%\CPack_Packages
 
 :: find the MSI file without the hardcoded version
 for /r %%i in (%BUILD_DIR%\*.msi) do (
