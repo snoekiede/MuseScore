@@ -152,9 +152,23 @@
             <?endif?>
         </Component>
 
+        <Component Id="RegisterURLScheme" Directory="TARGETDIR" Guid="6A4561FA-29AC-46D3-9662-9B559539B369">
+            <RegistryKey Root="HKCR" Key="musescore" Action="createAndRemoveOnUninstall">
+                <RegistryValue Type="string" Name="URL Protocol" Value="" />
+                <RegistryValue Type="string" Value="URL:MuseScore URL Protocol" />
+                <RegistryKey Key="DefaultIcon">
+                    <RegistryValue Type="string" Value="[INSTALL_ROOT]bin\$(var.ExeName),1" />
+                </RegistryKey>
+                <RegistryKey Key="shell\open\command">
+                    <RegistryValue Type="string" Value="&quot;[INSTALL_ROOT]bin\$(var.ExeName)&quot; &quot;%1&quot;" />
+                </RegistryKey>
+            </RegistryKey>
+        </Component>
+
         <FeatureRef Id="ProductFeature">
             <!-- Step 3: Tell WiX to install the shortcut and types -->
             <ComponentRef Id="RegisterTypes" />
+            <ComponentRef Id="RegisterURLScheme" />
         </FeatureRef>
     </Product>
 </Wix>
