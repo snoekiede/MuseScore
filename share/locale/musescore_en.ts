@@ -7906,6 +7906,11 @@ By default, they will be placed such as that their right end are at the same lev
         <translation type="unfinished">Enter tuplet: octuplet</translation>
     </message>
     <message>
+        <location filename="../../src/notation/internal/notationuiactions.cpp" line="1369"/>
+        <source>&amp;Nonuplet</source>
+        <translation type="unfinished">&amp;Nonuplet</translation>
+    </message>
+    <message>
         <location filename="../../src/notation/internal/notationuiactions.cpp" line="1370"/>
         <source>Enter tuplet: nonuplet</source>
         <translation type="unfinished">Enter tuplet: nonuplet</translation>
@@ -8485,6 +8490,41 @@ By default, they will be placed such as that their right end are at the same lev
         <location filename="../../src/notation/internal/notationuiactions.cpp" line="2396"/>
         <source>Show/hide page margins</source>
         <translation type="unfinished">Show/hide page margins</translation>
+    </message>
+    <message>
+        <location filename="../../src/notation/internal/notationuiactions.cpp" line="2419"/>
+        <source>Show element bounding rectangles</source>
+        <translation type="unfinished">Show element bounding rectangles</translation>
+    </message>
+    <message>
+        <location filename="../../src/notation/internal/notationuiactions.cpp" line="2425"/>
+        <source>Color element shapes</source>
+        <translation type="unfinished">Color element shapes</translation>
+    </message>
+    <message>
+        <location filename="../../src/notation/internal/notationuiactions.cpp" line="2431"/>
+        <source>Show segment shapes</source>
+        <translation type="unfinished">Show segment shapes</translation>
+    </message>
+    <message>
+        <location filename="../../src/notation/internal/notationuiactions.cpp" line="2437"/>
+        <source>Color segment shapes</source>
+        <translation type="unfinished">Color segment shapes</translation>
+    </message>
+    <message>
+        <location filename="../../src/notation/internal/notationuiactions.cpp" line="2443"/>
+        <source>Show skylines</source>
+        <translation type="unfinished">Show skylines</translation>
+    </message>
+    <message>
+        <location filename="../../src/notation/internal/notationuiactions.cpp" line="2449"/>
+        <source>Show system bounding rectangles</source>
+        <translation type="unfinished">Show system bounding rectangles</translation>
+    </message>
+    <message>
+        <location filename="../../src/notation/internal/notationuiactions.cpp" line="2455"/>
+        <source>Show corrupted measures</source>
+        <translation type="unfinished">Show corrupted measures</translation>
     </message>
     <message>
         <location filename="../../src/notation/internal/notationuiactions.cpp" line="1879"/>
@@ -9604,11 +9644,6 @@ By default, they will be placed such as that their right end are at the same lev
         <translation type="unfinished">&amp;Octuplet</translation>
     </message>
     <message>
-        <location filename="../../src/notation/internal/notationuiactions.cpp" line="1369"/>
-        <source>&amp;Nontuplet</source>
-        <translation type="unfinished">&amp;Nontuplet</translation>
-    </message>
-    <message>
         <location filename="../../src/notation/internal/notationuiactions.cpp" line="1375"/>
         <source>Othe&amp;r…</source>
         <translation type="unfinished">Othe&amp;r…</translation>
@@ -9978,6 +10013,11 @@ By default, they will be placed such as that their right end are at the same lev
         <location filename="../../src/framework/diagnostics/internal/diagnosticsactions.cpp" line="57"/>
         <source>Show &amp;accessible tree…</source>
         <translation type="unfinished">Show &amp;accessible tree…</translation>
+    </message>
+    <message>
+        <location filename="../../src/framework/diagnostics/internal/diagnosticsactions.cpp" line="62"/>
+        <source>Accessible &amp;dump</source>
+        <translation type="unfinished">Accessible &amp;dump</translation>
     </message>
     <message>
         <location filename="../../src/framework/diagnostics/internal/diagnosticsactions.cpp" line="67"/>
@@ -21252,13 +21292,13 @@ pickup measure</translation>
     </message>
     <message>
         <location filename="../../src/framework/learn/qml/Muse/Learn/LearnPage.qml" line="167"/>
-        <location filename="../../src/framework/learn/qml/Muse/Learn/LearnPage.qml" line="211"/>
+        <location filename="../../src/framework/learn/qml/Muse/Learn/LearnPage.qml" line="213"/>
         <source>Get started</source>
         <translation type="unfinished">Get started</translation>
     </message>
     <message>
         <location filename="../../src/framework/learn/qml/Muse/Learn/LearnPage.qml" line="186"/>
-        <location filename="../../src/framework/learn/qml/Muse/Learn/LearnPage.qml" line="253"/>
+        <location filename="../../src/framework/learn/qml/Muse/Learn/LearnPage.qml" line="257"/>
         <source>Classes</source>
         <translation type="unfinished">Classes</translation>
     </message>
@@ -23439,7 +23479,7 @@ In addition, Mastering MuseScore features a supportive community of musicians, w
     </message>
     <message>
         <location filename="../../src/palette/internal/palettecreator.cpp" line="275"/>
-        <location filename="../../src/palette/view/widgets/keyedit.cpp" line="311"/>
+        <location filename="../../src/palette/view/widgets/keyedit.cpp" line="313"/>
         <location filename="../../src/palette/view/widgets/masterpalette.cpp" line="176"/>
         <source>Key signatures</source>
         <translation type="unfinished">Key signatures</translation>
@@ -26012,17 +26052,17 @@ failed.</translation>
         <translation type="unfinished">Aux %1</translation>
     </message>
     <message>
-        <location filename="../../src/playback/internal/playbackcontroller.cpp" line="880"/>
+        <location filename="../../src/playback/internal/playbackcontroller.cpp" line="889"/>
         <source>Metronome</source>
         <translation type="unfinished">Metronome</translation>
     </message>
     <message>
-        <location filename="../../src/playback/internal/playbackcontroller.cpp" line="890"/>
+        <location filename="../../src/playback/internal/playbackcontroller.cpp" line="899"/>
         <source>Chords</source>
         <translation type="unfinished">Chords</translation>
     </message>
     <message>
-        <location filename="../../src/playback/internal/playbackcontroller.cpp" line="1210"/>
+        <location filename="../../src/playback/internal/playbackcontroller.cpp" line="1219"/>
         <source>Loading audio samples</source>
         <translation type="unfinished">Loading audio samples</translation>
     </message>
